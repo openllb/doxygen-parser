@@ -49,7 +49,7 @@ func Parse(r io.Reader) (*Group, error) {
 				for _, word := range comment.Doc.Words {
 					words = append(words, word.Text)
 				}
-				docs = append(docs, fmt.Sprintf("%s\n", strings.Join(words, " ")))
+				docs = append(docs, strings.Join(words, " "))
 				continue
 			}
 

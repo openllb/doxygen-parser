@@ -29,7 +29,7 @@ func TestParse(t *testing.T) {
 			`Hello world
 			`,
 			&Group{
-				Doc: "Hello world\n",
+				Doc: "Hello world",
 			},
 		},
 		{
@@ -38,7 +38,7 @@ func TestParse(t *testing.T) {
 			@return an object
 			`,
 			&Group{
-				Doc: "Hello world\n",
+				Doc: "Hello world",
 				Return: Return{
 					Description: "an object",
 				},
@@ -52,7 +52,7 @@ func TestParse(t *testing.T) {
 			More docs
 			`,
 			&Group{
-				Doc: "Hello world\n\nMore docs\n",
+				Doc: "Hello world\nMore docs",
 				Return: Return{
 					Description: "an object",
 				},
@@ -65,7 +65,7 @@ func TestParse(t *testing.T) {
 			@return an object
 			`,
 			&Group{
-				Doc: "Hello world\n",
+				Doc: "Hello world",
 				Params: []Param{
 					{
 						Name: "arg1",
@@ -85,7 +85,7 @@ func TestParse(t *testing.T) {
 			@return an object
 			`,
 			&Group{
-				Doc: "Hello world\n",
+				Doc: "Hello world",
 				Params: []Param{
 					{
 						Name: "arg1",
@@ -106,7 +106,7 @@ func TestParse(t *testing.T) {
 			@return an object
 			`,
 			&Group{
-				Doc: "Hello world\n",
+				Doc: "Hello world",
 				Params: []Param{
 					{
 						Name: "arg1",
@@ -117,6 +117,22 @@ func TestParse(t *testing.T) {
 						Description: "another param",
 					},
 				},
+				Return: Return{
+					Description: "an object",
+				},
+			},
+		},
+		{
+			"multi-line doc",
+			`Hello
+			World
+			Keep
+			My
+			Newlines
+			@return an object
+			`,
+			&Group{
+				Doc: "Hello\nWorld\nKeep\nMy\nNewlines",
 				Return: Return{
 					Description: "an object",
 				},

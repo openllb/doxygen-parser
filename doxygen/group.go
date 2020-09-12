@@ -38,25 +38,29 @@ func Parse(r io.Reader) (*Group, error) {
 		words      []string
 		endCommand bool
 	)
-	for _, comment := range cb.Comments {
+	for _, c := range cb.Comments {
+		if c.Newline != nil {
+			continue
+		}
+
 		endCommand = false
-		if comment.Command == nil {
+		if c.Doc != nil {
 			if fun == nil {
 				if len(words) > 0 {
 					docs = append(docs, "\n")
 				}
 				words = []string{}
-				for _, word := range comment.Doc.Words {
+				for _, word := range c.Doc.Words {
 					words = append(words, word.Text)
 				}
 				docs = append(docs, strings.Join(words, " "))
 				continue
 			}
 
-			if len(comment.Doc.Words) == 0 {
+			if len(c.Doc.Words) == 0 {
 				endCommand = true
 			} else {
-				for _, word := range comment.Doc.Words {
+				for _, word := range c.Doc.Words {
 					words = append(words, word.Text)
 				}
 			}
@@ -72,13 +76,13 @@ func Parse(r io.Reader) (*Group, error) {
 			fun = nil
 		}
 
-		if comment.Doc != nil {
+		if c.Doc != nil {
 			continue
 		}
 
-		fun = comment.Command.Func
+		fun = c.Command.Func
 		words = []string{}
-		for _, word := range comment.Command.Words {
+		for _, word := range c.Command.Words {
 			words = append(words, word.Text)
 		}
 	}

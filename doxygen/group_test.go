@@ -52,9 +52,9 @@ func TestParse(t *testing.T) {
 			More docs
 			`,
 			&Group{
-				Doc: "Hello world\nMore docs",
+				Doc: "Hello world",
 				Return: Return{
-					Description: "an object",
+					Description: "an object More docs",
 				},
 			},
 		},

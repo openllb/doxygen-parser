@@ -1,5 +1,7 @@
 github.com/alecthomas/participle v0.6.1-0.20200912121717-fc7769c96d75 h1:QALsEIY4dp5A1pSeO8VMpTsXeEcQqf+/8kU8N1ytCN8=
 github.com/alecthomas/participle v0.6.1-0.20200912121717-fc7769c96d75/go.mod h1:HfdmEuwvr12HXQN44HPWXR0lHmVolVYe4dyL6lQ3duY=
+github.com/alecthomas/participle v1.0.0-alpha1.0.20201031050245-4435aeea334f h1:FqlpQpKueMwqLGr4fUbri6et/zRUBkMvCnysC+8piiQ=
+github.com/alecthomas/participle v1.0.0-alpha1.0.20201031050245-4435aeea334f/go.mod h1:HfdmEuwvr12HXQN44HPWXR0lHmVolVYe4dyL6lQ3duY=
 github.com/alecthomas/repr v0.0.0-20181024024818-d37bc2a10ba1 h1:GDQdwm/gAcJcLAKQQZGOJ4knlw+7rfEQQcmwTbt4p5E=
 github.com/alecthomas/repr v0.0.0-20181024024818-d37bc2a10ba1/go.mod h1:xTS7Pm1pD1mvyM075QCDSRqH6qRLXylzS24ZTpRiSzQ=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=

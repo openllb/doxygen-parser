@@ -25,7 +25,7 @@ type Return struct {
 
 func Parse(r io.Reader) (*Group, error) {
 	var cb CommentBlock
-	err := Parser.Parse(r, &cb)
+	err := Parser.Parse(lexer.NameOfReader(r), r, &cb)
 	if err != nil {
 		return nil, err
 	}
